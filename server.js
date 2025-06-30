@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const connectDB = require('./config/db');
+const authRoutes = require('./routes/auth-routes')
 
 
 const app = express();
@@ -14,6 +15,7 @@ app.get('/', (re, res) => {
 connectDB();
 
 app.use(express.json());
+app.use('/api/user', authRoutes)
 
 app.listen('/', () => {
     console.log(`Server is listening on port ${PORT}`);
