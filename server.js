@@ -14,9 +14,12 @@ app.get('/', (re, res) => {
 
 connectDB();
 
+//middleware
 app.use(express.json());
-app.use('/api/user', authRoutes)
+app.use(express.urlencoded({extended:false}))
 
-app.listen('/', () => {
+app.use('/api/auth', authRoutes)
+
+app.listen(3350, () => {
     console.log(`Server is listening on port ${PORT}`);
 })
