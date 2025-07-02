@@ -1,0 +1,19 @@
+const mongoose = require('mongoose')
+
+const ImageSchema = new mongoose.Schema({
+    url:{
+       required: true 
+    },
+    publicId : {
+        type: String,
+        required: true
+    },
+    uploadedBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User', //user uploading the image
+        required: true
+    }
+}, {timestamps:true})
+
+
+module.exports = mongoose.model('Image', ImageSchema)

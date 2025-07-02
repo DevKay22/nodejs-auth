@@ -5,7 +5,7 @@ const authMiddleware = (req, res, next) => {
     
 
     const authHeader = req.headers['authorization'];
-    console.log(authHeader)
+    // console.log(authHeader)
     const token = authHeader && authHeader.split(" ")[1];
 
     if(!token){
@@ -32,7 +32,7 @@ const authMiddleware = (req, res, next) => {
 
     }
 
-    next()
+    
 }
 
 module.exports = authMiddleware
