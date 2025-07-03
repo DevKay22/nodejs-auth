@@ -68,7 +68,7 @@ const loginUser = async (req, res) => {
 
         if (!user) {
             return res.status(400).json({
-                ssuccess: false,
+                success: false,
                 message : "User does not exist"
             })
         }
@@ -107,7 +107,7 @@ const loginUser = async (req, res) => {
     }
 }
 
-const changePassword = async (req, res){
+const changePassword = async (req, res) =>{
     try {
         const userId = req.userInfo.userId;
 
@@ -157,5 +157,6 @@ const changePassword = async (req, res){
 
 module.exports = {
     registerUser,
-    loginUser
+    loginUser,
+    changePassword
 }
