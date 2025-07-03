@@ -4,7 +4,7 @@ const adminMiddleware = require('../middleware/admin-middleware');
 const uploadMiddleware = require('../middleware/upload-middleware');
 const {
   uploadImageController,
-//   getAllImagesController
+  fetchImagesController
 } = require('../controllers/image-controller');
 
 const router = express.Router();
@@ -19,6 +19,6 @@ router.post(
 );
 
 // Get all images (authenticated users)
-// router.get('/all', authMiddleware, getAllImagesController);
+ router.get('/get', authMiddleware, fetchImagesController);
 
 module.exports = router;
